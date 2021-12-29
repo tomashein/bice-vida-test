@@ -1,0 +1,23 @@
+.card
+  @apply border bg-white rounded-lg
+  border-color: var(--app-border-color)
+  min-height: 272px
+.card-image
+  @apply relative overflow-hidden rounded-t-lg
+  background-color: var(--app-backdrop-color)
+  > img
+    @apply w-full h-auto
+  > div
+    @apply absolute bottom-2 left-4
+.card-tag
+  @apply py-0.5 px-1.5 text-white rounded text-sm font-bold
+  letter-spacing: -0.2px
+  background-color: var(--app-primary-color)
+.card-body
+  @apply p-4
+.card-title
+  @apply text-base font-bold
+  letter-spacing: -0.2px
+.card-description
+  @apply text-sm font-normal leading-6
+  color: var(--app-secondary-text)

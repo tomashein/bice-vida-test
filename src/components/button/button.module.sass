@@ -1,0 +1,9 @@
+.button
+  @apply inline-flex flex-row rounded-full transition-colors duration-500 px-8 py-2 font-semibold text-white leading-8 appearance-none align-middle
+  background-color: var(--app-primary-color)
+  box-shadow: 0px 10px 16px rgba(18, 25, 84, 0.07)
+  &:hover:not([disabled])
+    background-color: var(--app-primary-lighter)
+  &:disabled
+    @apply cursor-not-allowed
+    color: rgba(255,255,255,.6)

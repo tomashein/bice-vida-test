@@ -1,0 +1,41 @@
+.wrapper
+  @apply inline-flex relative align-middle min-w-fit
+  &:focus-within, &:hover:not(.disabled)
+    label, i
+      color: var(--app-primary-color)
+.select
+  @apply inline-flex appearance-none w-full border bg-white rounded font-medium leading-6 pl-3 pr-8 pb-0.5 pt-4 cursor-pointer h-12 transition-colors duration-500
+  border-color: var(--app-border-color)
+  &:hover:not([disabled]), &:focus
+    @apply outline outline-2
+    outline-color: var(--app-primary-color)
+  &:disabled
+    @apply cursor-not-allowed
+.label
+  @apply absolute text-base font-medium transition-all top-3 left-3 pointer-events-none
+  color: var(--app-label-color)
+.label-collapsed
+  @apply text-xs top-1
+  color: var(--app-primary-color)
+.arrow
+  @apply absolute block right-1.5
+  top: 13px
+  transform: scale(var(--ggs,.7))
+  width: 22px
+  height: 22px
+  border: 2px solid transparent
+  border-radius: 100px
+  color: var(--app-label-color)
+.arrow::after
+  @apply block absolute
+  content: ""
+  width: 10px
+  height: 10px
+  border-bottom: 2px solid
+  border-right: 2px solid
+  transform: rotate(45deg)
+  left: 4px
+  top: 2px
+.arrow-toggled::after
+  top: 8px
+  transform: rotate(225deg)
