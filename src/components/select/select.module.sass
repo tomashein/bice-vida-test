@@ -1,8 +1,12 @@
 .wrapper
   @apply inline-flex relative align-middle min-w-fit
-  &:focus-within, &:hover:not(.disabled)
+  &:focus-within, &:hover
     label, i
       color: var(--app-primary-color)
+.wrapper-disabled
+  &:hover
+    i
+      color: var(--app-label-color)
 .select
   @apply inline-flex appearance-none w-full border bg-white rounded font-medium leading-6 pl-3 pr-8 pb-0.5 pt-4 cursor-pointer h-12 transition-colors duration-500
   border-color: var(--app-border-color)

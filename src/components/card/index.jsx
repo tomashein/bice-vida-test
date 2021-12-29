@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './card.module.sass';
@@ -7,7 +8,10 @@ const propTypes = {
   image: PropTypes.string,
   tag: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   title: PropTypes.node,
-  description: PropTypes.node
+  description: PropTypes.node,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  imageStyle: PropTypes.object
 };
 
 const defaultProps = {
@@ -15,17 +19,24 @@ const defaultProps = {
   image: null,
   tag: null,
   title: null,
-  description: null
+  description: null,
+  width: 'auto',
+  height: 'auto',
+  imageStyle: null
 };
 
-const Card = ({ className, image, tag, title, description, ...props }) => {
-  const classes = classNames(styles.card, className);
+const Card = ({ className, image, tag, title, description, width, height, imageStyle, ...props }) => {
+  const classes = classNames(
+    styles.card,
+    className,
+    height === 'auto' && styles['card-responsive']
+  );
 
   return (
-    <article className={classes} {...props}>
+    <article className={classes} style={{ height, width }} {...props}>
       {image && (
         <div className={styles['card-image']}>
-          <img src={image} alt={title} />
+          <img src={image} alt={title} style={imageStyle} />
           {tag && (
             <div className={styles['card-tag']}>
               {tag}

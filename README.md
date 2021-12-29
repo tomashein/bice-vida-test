@@ -37,6 +37,7 @@ Browsers that support both [native ESM via script tags](https://caniuse.com/es6-
 
 ## Environment Variables
 
-| Variable      | Development | Production | Required | Default Value |
-| ------------- | ----------- | ---------- | -------- | ------------- |
-| VITE_API_URL  | Used        | Used       | Yes      | `undefined`   |
+| Variable       | Development | Production | Required | Default Value     |
+| -------------- | ----------- | ---------- | -------- | ----------------- |
+| VITE_API_URL   | Used        | Used       | Yes      | `undefined` (url) |
+| VITE_API_DELAY | Used        | Used       | No       | `2000` (ms)       |

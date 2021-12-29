@@ -60,12 +60,12 @@ const Select = forwardRef(({ className, disabled, label, name, options, value, .
   const wrapperClasses = classNames(
     styles.wrapper,
     className,
-    disabled && 'disabled'
+    disabled && styles['wrapper-disabled']
   );
 
   const labelClasses = classNames(
     styles.label,
-    innerValue !== '' && styles['label-collapsed']
+    (innerValue !== '' || focus) && styles['label-collapsed']
   );
 
   const arrowClasses = classNames(
